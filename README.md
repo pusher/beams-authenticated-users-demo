@@ -27,3 +27,10 @@
 * Write out your auth url by pointing to your laptop ip address that's running the backend server e.g. ` http://192.168.6.27:3000/auth`
 * Press play, and ensure the emulator or device is on the same wifi network as the lapotp running the backend server.
 * You should get a logcat message to say `Beams login success`!
+### iOS
+
+- Ensure that iOS SDK is successfully configured by following our [docs](https://pusher.com/docs/beams/getting-started/ios/configure-apns).
+- Open the `PushNotifications.xcworkspace` in `ios/push-notifications-swift`.
+- Select `push-notifications-ios` project and open the `AppDelegate.swift` file.
+- Add correct values for `instanceId`, `authURL`, and `userId`.
+- Run the project on your device. If successfull, you should see the `All good!` message in your console.
