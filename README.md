@@ -34,3 +34,8 @@
 - Select `push-notifications-ios` project and open the `AppDelegate.swift` file.
 - Add correct values for `instanceId`, `authURL`, and `userId`.
 - Run the project on your device. If successfull, you should see the `All good!` message in your console.
+
+### Send notification
+
+- Navigate to the `http://localhost:3000/`
+- Populate the empty text fields: `User id` and `Notification message`, and press `Submit` button.
