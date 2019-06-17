@@ -16,3 +16,14 @@
   "token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE1NjA3NzczOTMsImV4cCI6MTU2MDg2Mzc5MywiaXNzIjoiaHR0cHM6Ly9ZWVkucHVzaG5vdGlmaWNhdGlvbnMucHVzaGVyLmNvbSIsInN1YiI6IlhZWiJ9.90f4EZTAEsd6t6wQJTxTEN7E2x9rsX2W1Emoae394W4"
 }
 ```
+
+
+### Android
+
+* Ensure you add your google-services.json from firebase with the package `com.pusher.demo.myapplication`
+* Open the project in Android Studio
+* Open MainActivity.kt
+* Write your beams instance id into the placeholder variable
+* Write out your auth url by pointing to your laptop ip address that's running the backend server e.g. ` http://192.168.6.27:3000/auth`
+* Press play, and ensure the emulator or device is on the same wifi network as the lapotp running the backend server.
+* You should get a logcat message to say `Beams login success`!
