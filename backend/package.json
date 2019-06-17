@@ -1,0 +1,16 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "description": "this is a demo backend server to get started with beams authenticated users",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "author": "pusher",
+  "license": "MIT",
+  "dependencies": {
+    "@pusher/push-notifications-server": "1.2.0",
+    "express": "4.17.1"
+  }
+}
