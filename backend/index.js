@@ -7,13 +7,14 @@ const secretKey = 'XXX';
 
 
 const app = express();
+var path = require("path");
 const beamsClient = new PushNotifications({
   instanceId: instanceId,
   secretKey: secretKey
 });
 
 //default endpoint to check your node server is running locally
-app.get('/', (req, res) => res.send('Hello World!'))
+app.get("/", (req, res) => res.sendFile(path.join(__dirname + "/index.html")));
 
 //specific endpoint for pusher beams authentication
 app.get('/auth', function(req, res) {
@@ -31,7 +32,32 @@ app.get('/auth', function(req, res) {
     const beamsToken = beamsClient.generateToken(userIdinQueryParam);
     res.send(JSON.stringify(beamsToken));
   }
+});
 
+//endpoint to send a test notification
+app.get("/send", function(req, res) {
+  const userId = req.query["user_id"];
+  const message = req.query["notification_message"];
+
+  beamsClient
+    .publishToUsers([userId], {
+      apns: {
+        aps: {
+          alert: message
+        }
+      },
+      fcm: {
+        notification: {
+          title: message
+        }
+      }
+    })
+    .then(publishResponse => {
+      console.log("Just published:", publishResponse.publishId);
+    })
+    .catch(error => {
+      console.error("Error:", error);
+    });
 });
 
 app.listen(port, () => console.log(`Listening on port ${port}...`));
