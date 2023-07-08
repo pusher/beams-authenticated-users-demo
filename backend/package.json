@@ -10,7 +10,7 @@
   "author": "pusher",
   "license": "MIT",
   "dependencies": {
-    "@pusher/push-notifications-server": "1.2.0",
+    "@pusher/push-notifications-server": "1.2.6",
     "express": "4.17.1"
   }
 }
